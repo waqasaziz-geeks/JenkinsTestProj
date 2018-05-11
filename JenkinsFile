@@ -1,0 +1,14 @@
+node {
+	stage 'Checkout'
+		checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/waqasaziz/JenkinsTestProj.git']]])
+
+	stage 'Build'
+	
+		bat 'nuget restore JenkinsTestProj.sln'
+		bat "msbuild JenkinsTestProj.sln /p:VisualStudioVersion=15.0"
+
+	
+	stage 'Archive'
+		archive 'JenkinsTestProj/Website/**'
+
+}
