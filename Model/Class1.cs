@@ -9,6 +9,8 @@ namespace Model
     class Class1
     {
         public void Test()
-        { }
+        {
+
+        }
     }
 }
