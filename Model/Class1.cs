@@ -8,6 +8,6 @@ namespace Model
 {
     class Class1
     {
-        //todo: some class
+
     }
 }
